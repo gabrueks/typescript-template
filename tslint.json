@@ -1,0 +1,11 @@
+{
+    "extends": "tslint-config-airbnb",
+    "rules": {
+        "indent": [true, "spaces"], // 19.1
+        "ter-indent": [
+          true,
+          4,
+          { "SwitchCase": 1 },
+        ],
+    }
+}

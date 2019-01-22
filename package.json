@@ -1,0 +1,39 @@
+{
+  "name": "typescript-template",
+  "version": "1.0.0",
+  "description": "A typescript with nodejs (and mongoDB) template for quick start on projects",
+  "main": "server.js",
+  "scripts": {
+    "start": "node ./dist/server.js",
+    "prestart": "tsc",
+    "dev": "ts-node ./src/server.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "typescript"
+  ],
+  "author": "Gabriel Bolzi de Souza",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/body-parser": "1.17.0",
+    "@types/cors": "2.8.4",
+    "@types/express": "4.16.0",
+    "@types/helmet": "0.0.42",
+    "@types/mongoose": "5.3.8",
+    "@types/morgan": "1.7.35",
+    "@types/node": "10.12.18",
+    "ts-node": "8.0.1",
+    "tslint": "5.12.1",
+    "tslint-config-airbnb": "5.11.1",
+    "typescript": "3.2.4"
+  },
+  "dependencies": {
+    "body-parser": "1.18.3",
+    "cors": "2.8.5",
+    "express": "4.16.4",
+    "express-healthcheck": "0.1.0",
+    "helmet": "3.15.0",
+    "mongoose": "5.4.3",
+    "morgan": "1.9.1"
+  }
+}

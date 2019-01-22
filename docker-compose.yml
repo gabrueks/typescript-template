@@ -1,0 +1,17 @@
+version: "2"
+services:
+  app:
+    container_name: typescript-template
+    restart: always
+    build: .
+    ports:
+      - "8080:8080"
+    links:
+      - mongo
+  mongo:
+    container_name: mongodb
+    image: mongo
+    volumes:
+      - ./data:/data/db
+    ports:
+      - "27017:27017"
