@@ -34,7 +34,8 @@ npm install
 npm start
 ```
 
-<h2>And in both cases, go to your browser and type http://localhost:8080</h2> 
+<h2>And in both cases, go to your browser and type http://localhost:8080</h2>
+<h3>If you have any tip, doubt or possible improvement, PR this repository (or create an issue) or send me an e-mail on gabriel03899@hotmail.com</h3>
 
 <h1>Olá!</h1><h3>~~Português~~</h3>
 
@@ -73,3 +74,4 @@ npm start
 ```
 
 <h2>E, nos dois casos, acessar http://localhost:8080</h2>
+<h3>Caso você tenha alguma dica, dúvida ou possível melhoria, dê um PR neste repositório (ou abra uma issue) ou me mande um e-mail gabriel03899@hotmail.com</h3>
