@@ -24,7 +24,6 @@ class AppConfig {
         }));
         this.app.use(cors());
         this.app.use(morgan('tiny'));
-        // Healthcheck to check your application
         this.app.use('/healthcheck', require('express-healthcheck')());
     }
 }

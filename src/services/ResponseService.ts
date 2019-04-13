@@ -1,15 +1,19 @@
-export class ResponseService {
+import { Request, Response } from 'express';
+
+export default class ResponseService {
     constructor() {}
 
-    public async getResponse() {
-        return {
-            typescript: 'works'
-        }
+    public getResponse = async (req: Request, res: Response) => {
+        let data: Object;
+        if (req.body) data = req.body;
+        const response: Object = { hi: 'there' };
+        res.status(200).json(response);
     }
 
-    public async postResponse() {
-        return {
-            typescript: 'works'
-        };
+    public postResponse = async (req: Request, res: Response) => {
+        let data: Object;
+        if (req.body) data = req.body;
+        const response: Object = { hi: 'thoro' };
+        res.status(200).json(response);
     }
 }

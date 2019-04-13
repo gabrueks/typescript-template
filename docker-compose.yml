@@ -4,6 +4,8 @@ services:
     container_name: typescript-template
     restart: always
     build: .
+    environment:
+      ENV: container
     ports:
       - "8080:8080"
     links:

@@ -1,25 +1,23 @@
 import * as express from 'express';
 
-import { ResponseService } from '../services/ResponseService';
+import { ResponseService } from '../services';
+import { Guard } from '../middlewares';
 
 export class Routes {
     private mainURL: string = '/';
     private postURL: string = '/post';
 
     private responseService: ResponseService = new ResponseService();
+    private guardMiddleware: Guard = new Guard();
 
     constructor() {}
 
     public routes(app: express.Application): void {
+        // Example on authenticated route
         app.route(this.mainURL)
-            .get(async (req: express.Request, res: express.Response) => {
-                res.status(200).json(await this.responseService.getResponse());
-            });
+            .get(this.guardMiddleware.checkSession, this.responseService.getResponse);
 
         app.route(this.postURL)
-            .post(async (req: express.Request, res: express.Response) => {
-                console.log(req.body);
-                res.status(200).json(await this.responseService.postResponse());
-            });
+            .post(this.responseService.postResponse);
     }
 }
