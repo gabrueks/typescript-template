@@ -13,5 +13,6 @@ script:
   - npm install codecov -g
   - npm test
   - codecov
+  - npm start
 after_success:
   - codecov
