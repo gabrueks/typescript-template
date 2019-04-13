@@ -2,11 +2,9 @@ import * as express from 'express';
 
 import { ResponseService } from '../services';
 import { Guard } from '../middlewares';
+import { mainRoutes } from './routesURL';
 
 export class Routes {
-    private mainURL: string = '/';
-    private postURL: string = '/post';
-
     private responseService: ResponseService = new ResponseService();
     private guardMiddleware: Guard = new Guard();
 
@@ -14,10 +12,10 @@ export class Routes {
 
     public routes(app: express.Application): void {
         // Example on authenticated route
-        app.route(this.mainURL)
+        app.route(mainRoutes.mainURL)
             .get(this.guardMiddleware.checkSession, this.responseService.getResponse);
 
-        app.route(this.postURL)
+        app.route(mainRoutes.postURL)
             .post(this.responseService.postResponse);
     }
 }
