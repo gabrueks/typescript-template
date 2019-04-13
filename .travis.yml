@@ -12,7 +12,6 @@ install:
 script:
   - npm install codecov -g
   - npm test
-  - codecov
   - npm run build
 after_success:
-  - codecov
+  - cat ./coverage/coverage.lcov | codecov
