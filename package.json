@@ -7,8 +7,7 @@
     "start": "node ./dist/server.js",
     "prestart": "tsc",
     "dev": "ts-node ./src/server.ts",
-    "pretest": "tsc",
-    "test": "mocha -r ts-node/register dist/**/*.spec.js"
+    "test": "mocha -r ts-node/register dist/**/*.spec.ts"
   },
   "keywords": [
     "typescript"
