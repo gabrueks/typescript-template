@@ -11,7 +11,10 @@ install:
   - npm install
 script:
   - npm install codecov -g
+  - npm install snyk -g
   - npm test
   - npm run build
+  - snyk wizard
+  - snyk monitor
 after_success:
   - cat ./coverage/coverage.lcov | codecov

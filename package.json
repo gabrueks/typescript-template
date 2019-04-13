@@ -7,7 +7,7 @@
     "start": "node ./dist/server.js",
     "prestart": "tsc",
     "build": "tsc",
-    "test": "mocha -r ts-node/register mocha-lcov-reporter > coverage/coverage.lcov  src/**/*.spec.ts --reporter nyan",
+    "test": "snyk test && mocha -r ts-node/register mocha-lcov-reporter > coverage/coverage.lcov  src/**/*.spec.ts --reporter nyan",
     "dev": "ts-node ./src/server.ts",
     "test-dev": "mocha -r ts-node/register src/**/*.spec.ts"
   },
