@@ -13,6 +13,5 @@ script:
   - npm install codecov -g
   - npm test
   - codecov
-  - npm run lint
 after_success:
   - codecov
