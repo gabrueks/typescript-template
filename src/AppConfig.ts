@@ -4,11 +4,11 @@ import * as helmet from 'helmet';
 import * as cors from 'cors';
 import * as morgan from 'morgan';
 
-import { Routes } from './routes/Routes';
+import { MainRoutes } from './routes/MainRoutes';
 
 class AppConfig {
     public app: express.Application;
-    private router: Routes = new Routes();
+    private router: MainRoutes = new MainRoutes();
 
     constructor() {
         this.app = express();

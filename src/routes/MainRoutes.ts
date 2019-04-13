@@ -4,7 +4,7 @@ import { ResponseService } from '../services';
 import { Guard } from '../middlewares';
 import { mainRoutes } from './routesURL';
 
-export class Routes {
+export class MainRoutes {
     private responseService: ResponseService = new ResponseService();
     private guardMiddleware: Guard = new Guard();
 
