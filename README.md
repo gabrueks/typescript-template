@@ -1,4 +1,4 @@
-![alt text](https://travis-ci.com/gabrueks/typescript-template.svg?branch=master)
+![alt text](https://travis-ci.com/gabrueks/typescript-template.svg?branch=master) [![Known Vulnerabilities](https://snyk.io/test/github/gabrueks/typescript-template/badge.svg)](https://snyk.io/test/github/gabrueks/typescript-template)
 <h1>Hello!</h1><h3>~~English~~</h3>
 
 This is a repository made for helping the start of **Node.js** with **Typescript** and **MongoDB** projects.
