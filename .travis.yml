@@ -7,6 +7,8 @@ cache:
   directories:
     - "node_modules"
 sudo: false
+env:
+  - SNYK_TOKEN=3c0de5da-b07d-47d3-ab44-880d35a096e3
 install:
   - npm install
 script:
@@ -14,7 +16,5 @@ script:
   - npm install snyk -g
   - npm test
   - npm run build
-  - snyk wizard
-  - snyk monitor
 after_success:
   - cat ./coverage/coverage.lcov | codecov
