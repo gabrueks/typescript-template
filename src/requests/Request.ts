@@ -2,27 +2,27 @@ import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
 
 import errorHandler from './errorHandler';
 
-export default class Lorem {
+export default class Request {
     constructor() {}
 
-    public getLoremIpsum = async (
+    public getRequest = async (
         URL: string,
         options: AxiosRequestConfig = {}): Promise<AxiosResponse> => {
         try {
-            return await axios.get(URL, options);
+            return axios.get(URL, options);
         } catch (err) {
-            errorHandler(err, this.getLoremIpsum.name);
+            errorHandler(err, this.getRequest.name);
         }
     }
 
-    public postLoremIpsum = async(
+    public postRequest = async (
         URL: string,
         data?: {},
         options: AxiosRequestConfig = {}): Promise<AxiosResponse> => {
         try {
-            return await axios.post(URL, data, options);
+            return axios.post(URL, data, options);
         } catch (err) {
-            errorHandler(err, this.postLoremIpsum.name);
+            errorHandler(err, this.postRequest.name);
         }
     }
 }

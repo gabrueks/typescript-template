@@ -2,14 +2,14 @@ import 'mocha';
 import { expect } from 'chai';
 import { AxiosResponse } from 'axios';
 
-import { LoremRequest } from '..';
+import { Request } from '../';
 import testsUrl from './testsUrl';
 
-const loremRequests: LoremRequest = new LoremRequest();
+const request: Request = new Request();
 
 describe('Requester', () => {
     it('Should return JSON data on get', async () => {
-        const result: AxiosResponse = await loremRequests.getLoremIpsum(testsUrl.getURL);
+        const result: AxiosResponse = await request.getRequest(testsUrl.getURL);
         expect(result).to.be.an('object');
         expect(result.status).to.equal(200);
         expect(result).to.have.property('status');
@@ -17,7 +17,7 @@ describe('Requester', () => {
     });
 
     it('Should return JSON data on post', async () => {
-        const result: AxiosResponse = await loremRequests.postLoremIpsum(testsUrl.postURL);
+        const result: AxiosResponse = await request.postRequest(testsUrl.postURL);
         expect(result).to.be.an('object');
         expect(result.status).to.equal(200);
         expect(result).to.have.property('status');

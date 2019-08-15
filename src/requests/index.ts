@@ -1,1 +1,1 @@
-export { default as LoremRequest } from './Lorem.request';
+export { default as Request } from './Request';

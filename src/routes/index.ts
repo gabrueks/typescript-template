@@ -1,7 +1,6 @@
 import { Application } from 'express';
 import { readdirSync } from 'fs';
 
-
 export class MainRoutes {
 
     constructor() {}
@@ -15,8 +14,8 @@ export class MainRoutes {
 
             app.route(filteredRoute.URL)
                 [`${filteredRoute.httpMethod}`]([
-                    filteredRoute.serviceName[`${filteredRoute.serviceMethod}`],
                     ...filteredRoute.middlewares,
+                    filteredRoute.serviceName[`${filteredRoute.serviceMethod}`],
                 ]);
         });
     }

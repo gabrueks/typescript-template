@@ -5,7 +5,7 @@ services:
     restart: always
     build: .
     environment:
-      ENV: container
+      ENV: localContainer
     ports:
       - "8080:8080"
     links:

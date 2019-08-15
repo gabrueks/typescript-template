@@ -25,7 +25,7 @@ export default class DatabaseBootstrap {
     }
 
     private getMongoURI(): string {
-        if (process.env.ENV === 'container') return 'mongodb://mongodb:27017/typescript-database';
+        if (process.env.ENV === 'localContainer') return 'mongodb://mongodb:27017/typescript-database';
         return (process.env.DATABASE_HOST
             && process.env.DATABASE_NAME
             && process.env.DB_MONGODB_USER
