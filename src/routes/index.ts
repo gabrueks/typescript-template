@@ -1,7 +1,9 @@
 import { Application } from 'express';
 import { readdirSync } from 'fs';
 
+import { Guard } from '../middlewares'
 export class MainRoutes {
+    private guardMiddleware: Guard = new Guard();
 
     constructor() {}
 
@@ -15,6 +17,7 @@ export class MainRoutes {
             app.route(filteredRoute.URL)
                 [`${filteredRoute.httpMethod}`]([
                     ...filteredRoute.middlewares,
+                    filteredRoute.authenticated ? this.guardMiddleware.checkSession : [],
                     filteredRoute.serviceName[`${filteredRoute.serviceMethod}`],
                 ]);
         });
