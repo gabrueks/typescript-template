@@ -4,7 +4,7 @@ import * as helmet from 'helmet';
 import * as cors from 'cors';
 import * as morgan from 'morgan';
 
-import { MainRoutes } from './routes/MainRoutes';
+import { MainRoutes } from './routes';
 
 class AppConfig {
     public app: express.Application;
@@ -13,7 +13,7 @@ class AppConfig {
     constructor() {
         this.app = express();
         this.config();
-        this.router.routes(this.app);
+        this.router.registerRoutes(this.app);
     }
 
     private config(): void {
