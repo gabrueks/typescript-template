@@ -2,6 +2,7 @@ import { Application } from 'express';
 import { readdirSync } from 'fs';
 
 import { Guard } from '../middlewares'
+import { IRoute } from '../interfaces/Route.interface'
 export class MainRoutes {
     private guardMiddleware: Guard = new Guard();
 
@@ -12,13 +13,13 @@ export class MainRoutes {
 
         routes.forEach(async route => {
             const routeDetails = await import(`./${route}`);
-            const filteredRoute = routeDetails[Object.keys(routeDetails)[0]];
+            const filteredRoute: IRoute = routeDetails[Object.keys(routeDetails)[0]];
 
             app.route(filteredRoute.URL)
                 [`${filteredRoute.httpMethod}`]([
                     ...filteredRoute.middlewares,
                     filteredRoute.authenticated ? this.guardMiddleware.checkSession : [],
-                    filteredRoute.serviceName[`${filteredRoute.serviceMethod}`],
+                    filteredRoute.serviceName['runController'],
                 ]);
         });
     }

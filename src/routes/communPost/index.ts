@@ -2,9 +2,8 @@ import { ResponseService } from '../../services';
 
 export default {
     serviceName: new ResponseService(),
-    serviceMethod: 'postResponse',
     middlewares: [],
     URL: '/post',
     httpMethod: 'post',
-    authenticated: true,
+    // authenticated: true,
 };
